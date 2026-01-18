@@ -14,7 +14,7 @@ For multiple variables, we use the vectorized form:$$y = \theta_0 + \theta_1x_1 
 > Without Dot Product: You would have to write a loop for every single feature ($x_1, x_2, \dots$) and every single data point. This is extremely slow in Python.With Dot Product: You treat your entire dataset as a matrix $X$. The operation $X \cdot \theta$ calculates the predictions for every row in the dataset simultaneously using optimized C-code under the hood of NumPy.The goal is to find the values of $\theta$ (the weights/parameters) that result in a line (or hyperplane) that passes as close as possible to all data points.
 
 ### Vectorized code in Python
-```
+```python
 import numpy as np
 def train_linear_regression_vectorized(X, y, lr=0.01, iterations=1000):
     # 1. Add a column of ones to handle the intercept 'c'
